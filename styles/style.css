@@ -1,0 +1,185 @@
+* {
+    background-color: #f3f3f3;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-size: large;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    height: fit-content;
+}
+
+nav {
+    height: 56px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.navbar-logo img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    margin-left: 15px;
+}
+
+.navbar-btn {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.navbar-active {
+    color: white;
+}
+
+.navbar-body {
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 56px;
+    text-align: center;
+    transition: all .5s;
+    background: rgba(95, 158, 160, .80);
+}
+
+.navbar-body li {
+    display: none;
+    margin: 20px 0;
+    text-align: center;
+    transition: all .5s;
+    background: rgba(95, 158, 160, .0);
+}
+
+.navbar-body li a {
+    background: rgba(95, 158, 160, .0);
+}
+
+.navbar-body li a svg {
+    background: rgba(95, 158, 160, .0);
+}
+
+.navbar-body li a:hover {
+    color: cadetblue;
+    transition: all .3s;
+}
+
+.profile-dropdown {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 13rem;  
+}
+
+.profile-dropdown ul li a:hover {
+    color: cadetblue;
+}
+
+#navbarProfile:hover .profile-dropdown {
+    display: block;
+}
+
+#navbarProfile:hover .profile-dropdown ul {
+    border: 1px solid black;
+    border-radius: 0 0 10px 10px;
+}
+
+#navbarToggle {
+    display: none;
+}
+
+#navbarToggle:checked ~ .navbar-body {
+    height: 13.5rem;
+    border: 1px solid black;
+    border-radius: 0 0 10px 10px;
+}
+
+#navbarToggle:checked ~ .navbar-body li {
+    display: block; 
+}
+
+#navbarToggle:checked ~ .navbar-body li a:hover {
+    color: white;
+}
+
+@media screen and (min-width: 768px) {
+    .navbar-logo img {
+        margin-left: 40px;
+    }
+
+    nav {
+        height: 56px;
+    }
+
+    .navbar-btn {
+        display: none;
+    }
+
+    .navbar-active {
+        color: cadetblue;
+    }
+
+    .navbar-body {
+        position: relative;
+        height: 70px;
+        top: 0;
+        background: none;
+        transition: none;
+        text-align: right;
+        margin-right: 20px;
+    }
+
+    .navbar-body li {
+        display: inline-block;
+        line-height: 70px;
+        margin: 0 20px;
+        transition: none;
+    }
+
+    #navbarToggle:checked~.navbar-body {
+        position: relative;
+        height: 70px;
+        top: 0;
+        background: none;
+        transition: none;
+        text-align: right;
+        margin-right: 25px;
+        border: none;
+    }
+
+    #navbarToggle:checked~.navbar-body li {
+        display: inline-block;
+        line-height: 70px;
+        margin: 0 20px;
+        transition: none;
+    }
+
+    .profile-dropdown {
+        display: none;
+        width: 7rem;
+        position: absolute;
+        top: 3.5rem;
+        right: -0.4rem;
+    }
+    
+    .profile-dropdown ul li a:hover {
+        color: cadetblue;
+    }
+    
+    #navbarProfile:hover .profile-dropdown {
+        display: block;
+    }
+
+    #navbarProfile:hover .profile-dropdown ul {
+        border: 1px solid cadetblue;
+        border-radius: 0 0 10px 10px;
+    }
+}
